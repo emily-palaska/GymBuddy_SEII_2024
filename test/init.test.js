@@ -46,7 +46,6 @@ test("GET /user/{username}/settings with Correct Request", async (t) => {
 	const { body, statusCode } = await t.context.got("user/john_doe/settings", {
 	  throwHttpErrors: false,
 	});
-	console.log(body, statusCode);
 
 	t.is(statusCode, 200); // Ensure the status code is 200
 	t.deepEqual(body, {
@@ -69,7 +68,7 @@ test("GET /user/{username}/settings with Correct Request", async (t) => {
 
 
   test("GET /user/{username}/settings with No Data Found", async (t) => {
-	const { body, statusCode } = await t.context.got("user/alice_wonders/settings", {
+	const { body, statusCode } = await t.context.got("user/alice_wonder/settings", {
 	  throwHttpErrors: false,
 	});
   
